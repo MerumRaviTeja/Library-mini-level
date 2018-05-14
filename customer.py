@@ -1,0 +1,40 @@
+book=[]
+bBook=[]
+class customer:
+    
+    def takenBook(self,bookName):
+        self.bookName = bookName
+        book.append(self.bookName)
+        print ("Taken Book :",self.bookName)
+        print (self.printBook())
+        
+    def printBook(self):
+        print (book)
+        
+    def returnBook(self,bookName):
+        self.bookName = bookName
+        book.remove(self.bookName)
+        print ("Return Book ",self.bookName)
+        print (self.printBook())
+        
+    def borrowBook(self,bookName):
+        self.bookName = bookName
+        bBook.append(self.bookName)
+        print ("Barrow Book :",self.bookName)
+        print (bBook)
+        
+c = customer()
+while (1):
+
+    n=int(input("Welcome to the Customer  Take  book Press 1 Return  book press 2 Borrow book press 3 :"))
+    if n == 1:
+        booka= input("Take a Book Name :")
+        c.takenBook(booka)
+    elif n == 2:
+        bookr= input("Return a Book Name :")
+        c.returnBook(bookr)
+    elif n == 3:
+        bookb= input("Borrow a Book Name :")
+        c.borrowBook(bookb)
+    else :
+        print("Enter 1 ,2, 3 only  ")
