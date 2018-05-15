@@ -1,0 +1,125 @@
+class Employee():
+    def GetType(self):
+        while True:
+            i=input("Enter type of employee[H,C OR S] and want to exit type EXIT: ")
+            if i=="H":
+               return self.Hourly(),self.Weeklyhours(),self.Hourlywage(),self.Bonus(),self.Salary()
+            elif i=="C":
+                return self.Monthly(),self.Basic(),self.BasicBonus(),self.CalcDeductiblewage(),self.CalcFullattendancebonus(),self.CalcForContrastEmployee()
+            elif i=="S":
+                return self.ExtraCommission()
+            elif i== "EXIT":
+                 break
+            else:
+                continue
+    def Hourly(self):
+            while True:
+                p=int(input("Number of work hours Per day: "))
+                self.p=p
+                if p<0 or p>24:
+                      print("Error")
+                      continue
+                return p
+    def Weeklyhours(self):
+            while True:
+                j=int(input("Number of weekly work hours[20,32 or 40]: "))
+                self.j=j
+                if (j==20) or (j==32) or (j==40):
+                        return j
+                print("Error")
+                continue
+    def Hourlywage(self):
+            while True:
+                k=int(input("Hourly wage hours[10,15 or 24]: "))
+                self.k=k
+                if (k==10) or (k==15) or (k==24):
+                     return k
+                print("Error")
+                continue
+    def Bonus(self):
+            Ebonus=self.p-self.j
+            if self.j==20:
+                self.Extrabonus=12
+            if self.j==32:
+                self.Extrabonus=18
+            if self.j==40:
+                self.Extrabonus=24
+            TotalExtraBonus =  Ebonus*self.Extrabonus
+            self.T=TotalExtraBonus
+    def Salary(self):
+            TotalSalary=(self.p*self.k)+self.T
+            print("TotalSalary is: ",TotalSalary)
+    def Monthly(self):
+        while True:
+            d=int(input("Enter number of company working days [21 days]: "))
+            self.d=d
+            if d<0 and d>21:
+                print("Error")
+                continue
+            return d
+    def Basic(self):
+        while True:
+                f=int(input("basic salary [3000,4000 or 5000]: "))
+                self.f=f
+                if (f==3000) or (f==4000) or (f==5000):
+                        return f
+                print("Error")
+                continue
+    def BasicBonus(self):
+            Days=int(input("work at public holidays: "))
+            if self.f==3000:
+                self.BExtrabonus=270
+            if self.f==4000:
+                self.BExtrabonus=360
+            if self.f==5000:
+                self.BExtrabonus=450
+            TotalBExtraBonus =  Days*self.BExtrabonus
+            self.L=TotalBExtraBonus
+            return 
+    def CalcDeductiblewage(self):
+            DaysOfAbsent =int(input("days employee absents?: "))
+            if self.f == 3000:
+                  self.DeductibleWage = 135
+            if self.f == 4000:
+                  self.DeductibleWage = 180
+            if self.f== 5000:
+                  self.DeductibleWage = 225
+            TotalDeductibleWage = DaysOfAbsent *self.DeductibleWage
+            self.ko=TotalDeductibleWage
+            return 
+    def CalcFullattendancebonus(self):
+             WorkOfdays =int(input("How many days employee works in a month: "))
+             if self.f == (3000) and (WorkOfdays >= 22):
+                  self.Fullattendancebonus = 300
+             if self.f == (4000) and (WorkOfdays >= 22):
+                  self.Fullattendancebonus = 400
+             if self.f==(5000) and (WorkOfdays >= 22):
+                  self.Fullattendancebonus = 500
+             if WorkOfdays < 22:  
+                  self.Fullattendancebonus = 0
+             return 
+    def CalcForContrastEmployee(self):
+            TotalExtraBonus = self.L
+            TotalDeductibleWage = self.ko
+            Fullattendancebonus = self.Fullattendancebonus
+            TotalSalary = (self.f + (self.L - self.ko)+ self.Fullattendancebonus)
+            print(TotalSalary)
+    def ExtraCommission(self):
+            global Ec
+            self.BasicSalary = 40000
+            lo=int(input("enter Yearly Sales Price in million dollors: "))
+            if lo<=10:
+                  self.CommisionPercentage=0
+            if lo>10 and lo<=30:
+                  self.CommisionPercentage=1
+            if lo>30 and lo<=50:
+                  self.CommisionPercentage=2
+            if lo>=50:
+                  self.CommisionPercentage=3
+            Ec = (self.CommisionPercentage*self.BasicSalary)/100
+            self.kt=Ec
+            TotalSalary = self.kt + self.BasicSalary
+            print(TotalSalary)
+            return
+E=Employee()
+E.GetType()
