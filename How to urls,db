@@ -1,0 +1,44 @@
+from django.contrib import admin
+from django.urls import path,include
+from cricketapp1 import urls as urls2
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/',include(urls2)),
+]
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+url(r"^getone/(?P<player_id>\d+)$",get_one),
+
+path('mail/<str:to>/<str:studentid>/<str:studentname>/',views.mailsending)
+
+from rest_framework.decorators import api_view
+
+from pymongo import MongoClient
+
+client=MongoClient()
+db=client['cricket']
+
+@api_view(['GET'])
+def get_one(request,player_id):
+    collection=db['players']
+    data = collection.find_one({"player_id":player_id},{"_id":0})
+    return JsonResponse(data,safe=False)
+    
+Installed Apps=['bus1.apps.Bus1Config']
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'mongof',
+    }
+}
+
+CSV FILE READ AND WRITE AVALIABLE IN GITHUB
