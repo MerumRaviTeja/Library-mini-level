@@ -1,0 +1,5 @@
+https://stackoverflow.com/questions/13951611/how-to-make-browser-to-download-the-django-csv-file-response
+https://stackoverflow.com/questions/38877208/how-can-i-write-a-large-csv-file-using-python
+https://stackoverflow.com/questions/7732990/django-provide-dynamically-generated-data-as-attachment-on-button-press
+https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file
+https://stackoverflow.com/questions/11875770/how-to-overcome-datetime-datetime-not-json-serializable
