@@ -3,3 +3,9 @@ https://stackoverflow.com/questions/38877208/how-can-i-write-a-large-csv-file-us
 https://stackoverflow.com/questions/7732990/django-provide-dynamically-generated-data-as-attachment-on-button-press
 https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file
 https://stackoverflow.com/questions/11875770/how-to-overcome-datetime-datetime-not-json-serializable
+https://simpleisbetterthancomplex.com/tutorial/2016/07/29/how-to-export-to-excel.html
+https://stackoverflow.com/questions/53890795/cant-subtract-offset-naive-and-offset-aware-datetimes-when-i-try-to-export-to-e
+https://stackoverflow.com/questions/42779934/jupyter-notebook-importerror-no-module-named-bson
+https://stackoverflow.com/questions/14956678/django-call-class-based-view-from-another-class-based-view
+https://stackoverflow.com/questions/13951611/how-to-make-browser-to-download-the-django-csv-file-response
+https://stackoverflow.com/questions/34226227/django-class-based-views-use-same-custom-class-for-different-url
